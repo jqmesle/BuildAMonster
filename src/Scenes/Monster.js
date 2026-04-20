@@ -49,6 +49,8 @@ class Monster extends Phaser.Scene {
         my.sprite.Lhorn = this.add.sprite(this.bodyX - 75, this.bodyY - 50, "monsterParts", "detail_white_horn_large.png"); 
         my.sprite.Lhorn.flipX = true;
 
+        my.sprite.smile.visible = false;
+
         // Event input: smiles.
         this.fKey.on('down', () => {
             my.sprite.smile.visible = false;
@@ -64,6 +66,7 @@ class Monster extends Phaser.Scene {
     update() {
         let my = this.my;    // create an alias to this.my for readability
         // Polling input: peace hand.
+        
         if (this.fKey.isDown) {
             my.sprite.smile.visible = false;
             my.sprite.fangs.visible = true;
